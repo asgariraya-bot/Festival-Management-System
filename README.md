@@ -1,6 +1,6 @@
 # Festival Management System
 
-C++ Project – Data Structures / Advanced Programming  
+C++ Project – Advanced Programming  
 A complete festival and participant management system using modern C++ features.
 
 ## Team Members
@@ -26,3 +26,14 @@ g++ main.cpp -o festival -std=c++17
 ./festival          # Linux / macOS / Git Bash
 # or
 festival.exe       # Windows
+
+Sample Output
+Events sorted by type:
+Painting Expo - Art (ID: 1)
+Rock Festival - Music (ID: 0)
+Summer Concert - Music (ID: 2)
+
+Events sorted by participant count:
+Summer Concert - 0 participants
+Painting Expo - 1 participants
+Rock Festival - 3 participants
