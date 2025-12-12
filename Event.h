@@ -26,7 +26,11 @@ public:
     bool isFull() const { return getRegisteredCount() >= capacity; }
 
     void addParticipant(int64_t participantId) { participants.push_back(participantId); }
-
+	
+	//fixing
+	const vector<int64_t>& getParticipants() const { return participants; }
+	//fixing
+	
     string toCSVLine() const {
         return eventName + "," + eventType + "," + to_string(capacity);
     }

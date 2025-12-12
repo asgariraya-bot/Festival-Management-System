@@ -17,6 +17,10 @@ public:
 
     // Add an event ID to the participant's registered events
     void addEvent(int64_t eventId) { registeredEvents.push_back(eventId); }
+    
+    //fixing
+    const vector<int64_t>& getRegisteredEvents() const { return registeredEvents; }
+    //fixing
 
     // Convert participant data to CSV line
     string toCSVLine() const { return name; }
