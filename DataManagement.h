@@ -88,6 +88,3 @@ public:
     static const vector<datatype>& getAll() { return all; }
     //fixing
 };
-
-template<typename datatype>
-vector<datatype> DataManagement<datatype>::all;
