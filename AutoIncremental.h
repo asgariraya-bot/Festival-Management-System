@@ -3,6 +3,12 @@
 #include <stdexcept>
 
 using namespace std;
+//fixing
+class ReAssignmentOfId : public runtime_error {
+public:
+    ReAssignmentOfId() : runtime_error("Re-assignment of id") {}
+};
+//fixing
 
 // Exception for re-assigning an ID
 class ReAssignmentOfId : public runtime_error 
