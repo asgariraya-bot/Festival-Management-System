@@ -7,6 +7,18 @@
 #include <utility>   
 
 #include "AutoIncremental.h"
+//fixing
+class ItemNotFound : public runtime_error {
+public:
+    ItemNotFound() : runtime_error("Item not found") {}
+};
+
+class UniqueConstraintFailed : public runtime_error {
+public:
+    UniqueConstraintFailed() : runtime_error("Unique constraint failed") {}
+};
+//fixing
+
 using namespace std;
 
 // Manage objects with unique ID, support save, delete, CSV export
@@ -15,14 +27,18 @@ class DataManagement
 {
 protected:
     AutoIncremental<datatype> id;   // unique ID
-    static vector<datatype> all;    // all objects
+    //fixing
+    static inline vector<datatype> all;    // all objects
+    //fixing
 
 public:
     // Create a new object
     template<typename... Args>
     static datatype& create(Args&&... args) 
     {
-        datatype obj(forward<Args>(args)...);
+        //fixing
+		datatype obj(args...);
+		//fixing
 
         if (exists(obj))
             throw UniqueConstraintFailed();
@@ -67,6 +83,10 @@ public:
 
     // Get ID of this object
     int64_t getId() const { return (int64_t)id; }
+    
+    //fixing
+    static const vector<datatype>& getAll() { return all; }
+    //fixing
 };
 
 template<typename datatype>
